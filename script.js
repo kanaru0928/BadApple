@@ -34,7 +34,12 @@ function play(){
 function tick(){
 	$('#playarea').val(video[frame]);
 	frame++;
-	if(frame >= lastFrame) clearInterval(interval);
+	if(frame >= lastFrame) stop();
+}
+
+function stop(){
+	clearInterval(interval);
+	$('#playarea').val('END');
 }
 
 $(function() {
