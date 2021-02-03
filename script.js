@@ -44,7 +44,7 @@ function stop(){
 
 $(function() {
 	var html = new XMLHttpRequest();
-	html.open('GET', './badapple.dat');
+	html.open('GET', './BadApple.dat');
 	html.responseType = 'arraybuffer';
 	html.onload = function(e){
 		buf = this.response;
