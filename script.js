@@ -86,9 +86,11 @@ $(function() {
 	}
 	html.send();
 	
-	$(document).keydown(e => {
-		if(e.keyCode == 65){
-			play();
+	$('#darkmode').change(function(){
+		if($(this).prop('checked')){
+			$('.playarea').css({'background-color':'black','color':'white'});
+		}else{
+			$('.playarea').css({'background-color':'white','color':'black'});
 		}
 	});
 });
