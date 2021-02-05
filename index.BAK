@@ -6,13 +6,12 @@
 		<link rel="apple-touch-icon" href="./apple-touch-icon.png">
 		<link rel="icon" type="image/png" href="./android-chrome-512x512.png">
 		<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-		<script src="js/bignumber.min.js"></script>
 		<script src="script.js"></script>
 		<title>BadApple AA</title>
 	</head>
 	<body>
-		<input type="button" value="スタート" onclick="play()">
-		<label><input type="checkbox" id="lookahead"></label>
+		<input type="button" value="スタート" onclick="play()" id="start_btn">
+		<label><input type="checkbox" id="lookahead">先読みモード</label>
 		<br>
 		<input type="text" value="　" id="white">
 		<input type="text" value="MM" id="black">
