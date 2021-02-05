@@ -13,6 +13,7 @@ var startDate;
 
 function play(){
 	$('#start_btn').prop('disabled', true);
+	$('#playarea').css('font-family', 'monospace');
 	array = new BigUint64Array(buf);
 	w = 64;
 	h = 48;
