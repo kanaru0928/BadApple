@@ -85,4 +85,10 @@ $(function() {
 		buf = this.response;
 	}
 	html.send();
+	
+	$(document).keydown(e => {
+		if(e.keyCode == 65){
+			play();
+		}
+	});
 });
