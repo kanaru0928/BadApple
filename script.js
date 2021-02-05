@@ -12,17 +12,18 @@ var white;
 var startDate;
 
 function play(){
-	p = document.getElementById('prog');
 	array = new BigUint64Array(buf);
-	w = $('#width').val();
-	h = $('#height').val();
+	w = 64;
+	h = 48;
 	black = $('#black').val();
 	white = $('#white').val();
-	lastFrame = $('#frame').val();
+	lastFrame = 6570;
+	fps = 30;
 	// 読み込み
 	video = new Array(lastFrame);
 	let str;
-	for(let i = 0; i < lastFrame; i++){
+	let i = 0;
+	setTimeout(function tmp(){
 		str = "";
 		for(let j = 0; j < h; j++){
 			for(let k = 0; k < w; k++){
@@ -31,7 +32,16 @@ function play(){
 			str += "\n";
 		}
 		video[i] = str;
-	}
+		if(i < lastFrame){
+			i++;
+			//let prog = Math.floor(i / lastFrame * 100) + '%';
+			//if($('#playarea') != prog){
+			//	$('#playarea').val(prog);
+			//}
+			setTimeout(tmp, 0);
+		}
+	}, 0);
+	
 	startDate = Date.now();
 	tick();
 }
@@ -40,7 +50,7 @@ function tick(){
 	if(frame > lastFrame) stop();
 	else{
 		frame++;
-		let interval = frame * 100 / 3 + startDate - Date.now();
+		let interval = frame / fps * 1000 + startDate - Date.now();
 		setTimeout(tick, interval);
 		$('#playarea').val(video[frame]);
 	}
