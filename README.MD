@@ -1,5 +1,3 @@
-# マークダウンテスト
-
 # BadApple AA edition
 ## 概要
 Bad Apple!! の影絵PV（[sm8628149](https://www.nicovideo.jp/watch/sm8628149)）を文字として再生するツールです。
